@@ -1,0 +1,22 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+
+  "rules": {
+    "quotes": [1, "single"],
+    "no-unused-vars": [1],
+    "no-use-before-define": [2, "nofunc"],
+    "indent": [1, 2],
+    "semi": [1, "never"],
+    "no-console": 0,
+    "no-irregular-whitespace": 0,
+    "react/prop-types": 0,
+    "object-curly-spacing": [1, always]
+  }
+}
