@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 
-const BACKEND_API = 'http://localhost:1337'
+const BACKEND_API = '/api'
 
 class App extends React.Component {
   constructor() {
@@ -15,11 +15,12 @@ class App extends React.Component {
 
   async fetchApi() {
     try {
-      const data = await axios.get(BACKEND_API)
-      this.setState({ message: data })
+      await axios.get(BACKEND_API)
+      this.setState({ message: 'Hello from Express!' })
     } catch (error) {
       this.setState({
-        error: 'The client is working correctly but no backend API was found.',
+        message:
+          'The client is working correctly but no backend API was found.',
       })
     }
   }
@@ -27,7 +28,7 @@ class App extends React.Component {
     return (
       <div>
         <h3>Hello from React!</h3>
-        <p>{this.state.message || this.state.error}</p>
+        <h3>{this.state.message}</h3>
       </div>
     )
   }
